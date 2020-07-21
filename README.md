@@ -1,0 +1,1 @@
+# Using CD/CD tools as much as possible with goloag
