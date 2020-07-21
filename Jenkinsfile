@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'go version'
+                sh 'go get -u github.com/gin-gonic/gin'
                 sh 'go run main.go'
             }
         }
