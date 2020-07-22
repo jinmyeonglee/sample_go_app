@@ -6,6 +6,6 @@ go: stable
 
 install:
   - go get -u github.com/gin-gonic/gin
-
+  - echo $USER_NAME
 script:
   go test
