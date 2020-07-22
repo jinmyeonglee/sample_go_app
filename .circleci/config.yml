@@ -17,11 +17,13 @@ jobs:
     #### expecting it in the form of
     ####   /go/src/github.com/circleci/go-tool
     ####   /go/src/bitbucket.org/circleci/go-tool
-    working_directory: /go/src/github.com/{{ORG_NAME}}/{{REPO_NAME}}
+    working_directory: /go/src/github.com/jinmyeonglee/sample_go_app
+#    working_directory: /go/src/github.com/{{ORG_NAME}}/{{REPO_NAME}}
     steps:
       - checkout
 
       # specify any bash command here prefixed with `run: `
       - run: go get github.com/gin-gonic/gin
       - run: ls
+      - run: pwd
       - run: go test
