@@ -1,9 +1,6 @@
 pipeline {
     agent {
-        docker {
-            image 'golang'
-            args '-p 8080:8080'
-        }
+        dockerfile true
     }
     stages {
 //         stage('Pre Test') {

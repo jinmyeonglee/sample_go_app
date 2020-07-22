@@ -1,0 +1,11 @@
+language: go
+os:
+  - linux
+sudo: false
+go: stable
+
+install:
+  - go get -u github.com/gin-gonic/gin
+
+script:
+  go test
