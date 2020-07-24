@@ -42,3 +42,12 @@ jobs:
 
     - name: Push to docker hub
       run: docker push flyingsmurf/go-app:latest
+
+    - name: Pull other docker image
+      run: docker pull flyingsmurf/todo-list-python-app
+
+    - name: Run docker-compose
+      run: docker-compose up
+
+    - name: Remove docker-compose
+      run: docker-compose down
