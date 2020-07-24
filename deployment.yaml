@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: CICD-project-golang-service
+  namespace: CICD_project
+spec:
+  type:
+  selector:
+    app: sample-project
+  ports:
+    - port: 6000
+      targetPort: 8080
+      loadBalancerPort: 30700
+    type: LoadBalancer
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-project
+  namespace: CICD_project
+spec:
+  selector:
+    matchLabels:
+      app: sample-project
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: sample-project
+    spec:
+      containers:
+        - name: sample-project
+          image: flyingsmurf/go-app:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+
