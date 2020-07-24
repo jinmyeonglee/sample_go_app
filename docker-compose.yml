@@ -7,10 +7,10 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
   python_project:
-    image: python_project:latest 
+    image: flyingsmurf/todo-list-python-app:latest
     expose:
       - "8080"
   golang_project:
-    image: go_app:latest
+    image: flyingsmurf/go-app:latest
     expose:
       - "8080"
